@@ -1,0 +1,23 @@
+{
+  "name": "casa-do-codigo",
+  "version": "1.0.0",
+  "description": "Projeto construído no curso de Node.js parte 1 da Alura.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruno-negreiros/casa-do-codigo.git"
+  },
+  "author": "Bruno Negreiros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bruno-negreiros/casa-do-codigo/issues"
+  },
+  "homepage": "https://github.com/bruno-negreiros/casa-do-codigo#readme",
+  "dependencies": {
+    "express": "4.16.3"
+  }
+}
