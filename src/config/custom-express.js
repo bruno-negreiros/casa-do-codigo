@@ -5,6 +5,8 @@ const express = require('express'); // retorna uma função
 const app = express();
 const bodyParser = require('body-parser');
 
+app.use('/estatico', express.static('src/app/public'));
+
 // middleware
 app.use(bodyParser.urlencoded({
     extended: true
