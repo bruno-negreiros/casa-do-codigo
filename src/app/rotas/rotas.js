@@ -1,3 +1,5 @@
+const db = require('../../config/database');
+
 module.exports = (app) => {
     // Criando as rotas
     app.get('/', function(req, resp) {
@@ -14,18 +16,14 @@ module.exports = (app) => {
     });
 
     app.get('/livros', function(req, resp) {
-        resp.marko(
-            require('../views/livros/lista/lista.marko'), 
-            {
-                livros: [
-                    {id: 1, titulo: 'SpringBoot'},
-                    {id: 2, titulo: 'Angular'},
-                    {id: 3, titulo: 'Node'},
-                    {id: 4, titulo: 'React'},
-                    {id: 5, titulo: 'ReactNative'}
-                ]
-            }
-        );
+        db.all('SELECT * from livros', function(erro, resultados) {
+            resp.marko(
+                require('../views/livros/lista/lista.marko'), 
+                {
+                    livros: resultados
+                }
+            );
+        });
     });
 }
 
