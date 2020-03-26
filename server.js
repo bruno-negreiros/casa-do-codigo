@@ -1,5 +1,4 @@
-const express = require('express'); // retorna uma função
-const app = express();
+const app = require('./src/config/custom-express');
 
 app.listen(3000, function () {
     console.log(`Servidor rodando na porta 3000.`)
@@ -67,8 +66,6 @@ app.get('/livros', function(req, resp) {
 //         </html>
 //         `;
 //     }
-
-//     resp.end(html);
-              
+//     resp.end(html);            
 // });
 // servidor.listen(3000); // porta padrão dos servidores node
