@@ -21,19 +21,25 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<h1>Cadastro de livros</h1><form action=\"/livros\" method=\"post\"><input type=\"hidden\" id=\"id\" name=\"id\" value=\"" +
-    marko_escapeXmlAttr(data.livro.id) +
-    "\"><div><label for=\"titulo\">Titulo:</label><input type=\"text\" id=\"titulo\" name=\"titulo\" value=\"" +
-    marko_escapeXmlAttr(data.livro.titulo) +
+  out.w("<h1>Cadastro de livros</h1><form action=\"/livros\" method=\"post\">");
+
+  if (data.id) {
+    out.w("<div><input type=\"hidden\" id=\"id\" name=\"id\" value=\"" +
+      marko_escapeXmlAttr(data.id) +
+      "\"><input type=\"hidden\" name=\"_method\" value=\"PUT\"></div>");
+  }
+
+  out.w("<div><label for=\"titulo\">Titulo:</label><input type=\"text\" id=\"titulo\" name=\"titulo\" value=\"" +
+    marko_escapeXmlAttr(data.titulo) +
     "\" placeholder=\"coloque o titulo\"></div><div><label for=\"preco\">Preço:</label><input type=\"text\" id=\"preco\" name=\"preco\" value=\"" +
-    marko_escapeXmlAttr(data.livro.preco) +
+    marko_escapeXmlAttr(data.preco) +
     "\" placeholder=\"150.25\"></div><div><label for=\"descricao\">Descrição:</label><textarea cols=\"20\" rows=\"10\" id=\"descricao\" name=\"descricao\" placeholder=\"fale sobre o livro\">" +
-    marko_escapeXml(data.livro.descricao) +
+    marko_escapeXml(data.descricao) +
     "</textarea></div><input type=\"submit\" value=\"Salvar\"></form>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "15");
+  await_reorderer_tag({}, out, __component, "17");
 
   out.w("</body></html>");
 }
