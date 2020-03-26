@@ -23,25 +23,14 @@ module.exports = (app) => {
                     resp.marko(require('../views/livros/lista/lista.marko'), {livros: livros});
                 })
                 .catch(erro => console.error(erro));
+    });
 
-        // livroDao.lista(
-        //     function(erro, resultados) {
-        //         resp.marko(
-        //             require('../views/livros/lista/lista.marko'), 
-        //             {
-        //                 livros: resultados
-        //             }
-        //         );
-        //     }
-        // );
-        // db.all('SELECT * from livros', function(erro, resultados) {
-        //     resp.marko(
-        //         require('../views/livros/lista/lista.marko'), 
-        //         {
-        //             livros: resultados
-        //         }
-        //     );
-        // });
+    app.get('/livros/form', function(req, resp) {
+        resp.marko(require('../views/livros/form/form.marko'));
+    });
+
+    app.post('/livros', function(req, resp) {
+        console.log(req.body);
     });
 }
 
