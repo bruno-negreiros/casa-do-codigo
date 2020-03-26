@@ -26,6 +26,7 @@ module.exports = (app) => {
                     <li>Angular</li>
                     <li>Node</li>
                     <li>React</li>
+                    <li>React Native</li>
                 </ul>
             </body>
         </html>
